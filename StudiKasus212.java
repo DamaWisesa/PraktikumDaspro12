@@ -12,7 +12,7 @@ public static void main(String[] args) {
 
     System.out.print("Masukkan nama mahasiswa: ");
     namaMahasiswa = sc.nextLine();
-    System.out.print("Masukkan jenis lomba (BELMAWA, BAKORMA, Mandiri, PKM, atau Lainnya): ");
+    System.out.print("Masukkan jenis lomba (BELMAWA/BAKORMA/Mandiri/PKM/atau Lainnya): ");
     jenisLomba = sc.nextLine();
 
     if (jenisLomba.equalsIgnoreCase("belmawa") || jenisLomba.equalsIgnoreCase("bakorma")
@@ -35,6 +35,22 @@ public static void main(String[] args) {
                 System.out.println(
                         "Maaf " + namaMahasiswa + ", Dokumen anda kurang lengkap " + (4 - jumlahDokumen) + " dokumen");
 
-        sc.close();
+        System.out.println("Maaf " + namaMahasiswa + ", Jumlah dokumen tidak valid");
     }
+
+    else if (jenisLomba.equalsIgnoreCase("pkm")) {
+        System.out.print("Masukkan status PKM (1 untuk lolos, 0 untuk tidak lolos): ");
+        statusPkm = sc.nextInt();
+
+        if (statusPkm == 1)
+            System.out.println("Selamat " + namaMahasiswa + ", Anda mendapatkan dana penghargaan");
+        else if (statusPkm == 0)
+            System.out.println("Maaf " + namaMahasiswa + ", Anda tidak mendapatkan dana penghargaan");
+        else
+            System.out.println("Maaf " + namaMahasiswa + ", Status PKM tidak valid");
+
+        sc.close();
+
+    }
+
 }
